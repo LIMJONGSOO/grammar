@@ -1,22 +1,32 @@
 git init // 해당 디렉토리에 git 초기화
+
 git config --list // git 설정 조회
+
 git clone [url] // git 복사
+
 git remote -v  // 저장소 확인 
 git remote add  [저장소 이름]  [url] // git remote 연결
 git remote remove  [저장소 이름] // git remote 제거
 git remote set-url [저장소 이름] [URL.git] //git remote 수정
+
 git status // 상태조회
+
 git add . // 새로운 파일 모두 추가
 git add [파일이름] // 해당 파일만 추가
 git commit -m "message" // commit
 git push
+
 git pull
+
 git branch // branch 목록
 git branch [new branch name] // branch 생성
+git branch -d [branch 명] // branch 삭제
+
 git checkout [branch] // branch 이동
 git switch [branch] // branch 이동
+
 git merge [병합할 branch] // merge
-git branch -d [branch 명] // branch 삭제
+
 git tag <tag name>  // tag 추가 
 git log --decorate 
 git tag -am "내용" <tag name>
