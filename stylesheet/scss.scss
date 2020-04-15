@@ -6,6 +6,30 @@ html {
     width: 100%;
 
     .childclass {
-        width: 100%
+        width: 100%;
+    }
+}
+
+.list {
+    width: 100%;
+
+    &:first-child {
+        width: 90%;
+    }
+
+    &:last-child {
+        width: 80%;
+    }
+
+    &:nth-child(n+2) {
+        width: 70%;
+    }
+
+    &:nth-last-child(n+2) {
+        width: 60%;
+    }
+
+    &:focus {
+        width: 200%;
     }
 }

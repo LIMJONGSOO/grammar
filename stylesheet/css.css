@@ -7,5 +7,31 @@ html {
 }
 
 .class .childclass {
-    width: 100%
+    width: 100%;
+}
+
+.list {
+    width: 100%;
+}
+
+.list:first-child {
+    width: 90%;
+}
+
+.list:last-child {
+    width: 80%;
+}
+
+/* 앞에서부터 */
+.list:nth-child( n+2 ) {
+    width: 70%;
+}
+
+/* 뒤에서부터 */
+.list:nth-last-child( n+2 ) {
+    width: 60%;
+}
+
+.list:focus {
+    width: 200%;
 }
