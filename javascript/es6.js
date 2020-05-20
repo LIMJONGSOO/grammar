@@ -5,7 +5,9 @@
 /* 1. block 단위 변수 */
 const : 재정의가 불가능한 변수
 let : 변경이 가능한 변수
-
+function과 arrow function의 차이
+function 안에서 this는 자신이 종속된 객체를 가리킴
+arrow function은 자신이 종속된 인스턴스를 가리킴
 closer 개념 : 
 
 /*----------------------------------------------------------------------------------------*/
@@ -39,6 +41,11 @@ let arr = Array.from(arguments); // function에서 인자값을 arguments 배열
 /*----------------------------------------------------------------------------------------*/
 
 /* 6.간단히 객체생성 */
+
+const key = 'keyName';
+const object = {
+  [key] : 'value'
+};  // object = { 'keyName' : 'value'}
 
 function getObj(){
     const name = "crong";
