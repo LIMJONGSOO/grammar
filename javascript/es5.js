@@ -1,11 +1,20 @@
 // javasript 특성
 // 인터프리터 언어
 // 이진 부동소수점 숫자를 사용
+var x = 0.2 + 0.1;// 0.30000000000000004
 // 함수 유효범위
 // 함수내 변수는 호스팅되어 자동으로 함수 맨 위에서 선언됨
 
+
+var myNumber = 32;
+myNumber.toString(10);  // returns 32 10진법
+myNumber.toString(32);  // returns 10 32진법
+myNumber.toString(16);  // returns 20 16진법
+myNumber.toString(8);   // returns 40 8진법
+myNumber.toString(2);   // returns 100000 2진법
+
 // Math 함수
-Math.pow(2,4) // 2의 4승
+Math.pow(2,4) // 2의 4승 2**4
 Math.round(.6) //반올림
 Math.ceil(.6) //올림
 Math.floor(.6)//버림
@@ -15,7 +24,7 @@ Math.min(1,2,3) // 최소값
 Math.random() // 0과 1사이의 임의의 수
 Math.PI // 원주율
 Math.E // 자연로그상수
-Math.sqrt(3) // 3의 제곱근
+Math.sqrt(64) // 8 의 제곱근
 
 var f = function(x) { return x;} //변수에 함수 할당
 function f(x) {return x;} // 함수선언
@@ -66,5 +75,9 @@ a.every(); // 함수인자에서 모든 원소의 결과값이 true일 때 true
 a.some(); // 함수인자에서 일부 원소의 결과값이 true면 true
 a.reduce(); // 함수인자로 배열의 원소를 하나의 값으로 결합, 앞부터 계산
 a.reduceRight(); // 함수인자로 배열의 원소를 하나의 값으로 결합, 뒤부터 계산
+a.indexOf();
+a.lastIndexOf();
+a.findIndex();
+a.findIndex();
 
 // function 함수
