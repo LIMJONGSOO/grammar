@@ -53,3 +53,54 @@ var myFunc = makeFunc();
 //유효범위의 어휘적 환경을 유지
 myFunc();
 //리턴된 displayName 함수를 실행(name 변수에 접근)
+
+
+
+
+
+
+
+
+
+
+//스타일 가이드
+
+//Declarations on Top
+//Initialize Variables
+//Use === Comparison
+//Use Parameter Defaults
+//라인 길이 <80
+var price = 30;
+var tax = 10;
+var total = price + tax;
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+// class 선언
+class Car {
+  constructor(brand) {
+    this._carname = brand;
+  }
+  get carname() {
+    return this._carname;
+  }
+  set carname(x) {
+    this._carname = x;
+  }
+
+  hellow() {
+    return 'Hellow, ' + this._carname;
+  }
+}
+
+mycar = new Car("Ford");
+document.getElementById("demo").innerHTML = mycar.hellow("Hello");
+
+
+
+
+
