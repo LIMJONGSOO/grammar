@@ -45,7 +45,8 @@ function makeFunc() {
   function displayName() {
     alert(name);
   }
-  return displayName;
+  return;
+  displayName;
 }
 
 var myFunc = makeFunc();
@@ -53,15 +54,6 @@ var myFunc = makeFunc();
 //유효범위의 어휘적 환경을 유지
 myFunc();
 //리턴된 displayName 함수를 실행(name 변수에 접근)
-
-
-
-
-
-
-
-
-
 
 //스타일 가이드
 
@@ -77,7 +69,7 @@ var person = {
   firstName: "John",
   lastName: "Doe",
   age: 50,
-  eyeColor: "blue"
+  eyeColor: "blue",
 };
 
 // class 선언
@@ -93,14 +85,33 @@ class Car {
   }
 
   hellow() {
-    return 'Hellow, ' + this._carname;
+    return "Hellow, " + this._carname;
   }
 }
 
 mycar = new Car("Ford");
 document.getElementById("demo").innerHTML = mycar.hellow("Hello");
 
-
-
-
-
+const movieApiMovies = () => {
+  let loader = `<div class="boxLoading"></div>`;
+  document.getElementById("movieResult").innerHTML = loader;
+  fetch(movieApi_url + "movies/")
+    .then((response) => response.json())
+    .then(function (data) {
+      let result = `<h2> Movies I've watched! </h2>`;
+      data.forEach((movie) => {
+        const { id, name, year, note_imdb, genre, duration } = movie;
+        result += `<div>
+                      <h5> Movie ID: ${id} </h5>
+                      <ul>
+                          <li>Movie name: ${name}</li>
+                          <li>Movie year: ${year}</li>
+                          <li>Movie note on IMDB: ${note_imdb}</li>
+                          <li>Movie Genre: ${genre}</li>
+                          <li>Movie duration: ${duration}</li>
+                      </ul>
+                  </div>`;
+        document.getElementById("movieResult").innerHTML = result;
+      });
+    });
+};
