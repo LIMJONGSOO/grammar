@@ -1,21 +1,36 @@
 /* ES6 ECMAScript 2015 highlight*/
 
+/* 변수 타입 구조도 */
+numberType: Number;
+strigType: String;
+booleanType: Boolean;
+symbolType: Symbol;
+objectType: Object;
+  fnType: Function;
+  array: Array;
+  date: Date;
+  regexp: RegExp;
+//null;
+//undefined
 
 
-/* 1. block 단위 변수 */
+/* 1. block 단위 변수
 const : 재정의가 불가능한 변수
 let : 변경이 가능한 변수
 function과 arrow function의 차이
 function 안에서 this는 자신이 종속된 객체를 가리킴
 arrow function은 자신이 종속된 인스턴스를 가리킴
 closer 개념 : 
+*/
 
 /*----------------------------------------------------------------------------------------*/
 
-/* 2. string의 새로운 메서드 */
+/* 2. string의 새로운 메서드 
 .startsWith()
 .endsWith()
 .includes()
+*/
+
 
 /*----------------------------------------------------------------------------------------*/
 
