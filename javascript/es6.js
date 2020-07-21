@@ -20,8 +20,31 @@ let : 변경이 가능한 변수
 function과 arrow function의 차이
 function 안에서 this는 자신이 종속된 객체를 가리킴
 arrow function은 자신이 종속된 인스턴스를 가리킴
-closer 개념 : 
+closer 개념 : 클로저는 독립적인 (자유) 변수를 가리키는 함수이다. 또는, 클로저 안에 정의된 함수는 만들어진 환경을 ‘기억한다’.
+
 */
+
+// closer
+function hello(name) {
+  var _name = name;
+  return function() {
+    console.log('Hello, ' + _name);
+  };
+}
+
+var hello1 = hello('승민');
+var hello2 = hello('현섭');
+var hello3 = hello('유근');
+
+hello1(); // 'Hello, 승민'
+hello2(); // 'Hello, 현섭'
+hello3(); // 'Hello, 유근'
+
+// 클로저를 통해 내부 변수를 참조하는 동안에는 내부 변수가 차지하는 메모리를 GC가 회수하지 않는다. 
+// 따라서 클로저 사용이 끝나면 참조를 제거하는 것이 좋다.
+hello1 = null;
+hello2 = null;
+hello3 = null;
 
 /*----------------------------------------------------------------------------------------*/
 
