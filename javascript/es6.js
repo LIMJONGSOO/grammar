@@ -780,3 +780,35 @@ function testPromise() {
   log.insertAdjacentHTML('beforeend', thisPromiseCount +
     ') 프로미스 생성 (<small>동기적 코드 종료</small>)<br/>');
 }
+
+
+/*----------------------------------------------------------------------------------------*/
+
+/* 29. async & await */
+//주의하셔야 할 점은 비동기 처리 메서드가 꼭 프로미스 객체를 반환해야 await가 의도한 대로 동작합니다.
+
+function fetchUser() {
+  var url = 'https://jsonplaceholder.typicode.com/users/1'
+  return fetch(url).then(function(response) {
+    return response.json();
+  });
+}
+
+function fetchTodo() {
+  var url = 'https://jsonplaceholder.typicode.com/todos/1';
+  return fetch(url).then(function(response) {
+    return response.json();
+  });
+}
+
+async function logTodoTitle() {
+  try {
+    var user = await fetchUser();
+    if (user.id === 1) {
+      var todo = await fetchTodo();
+      console.log(todo.title); // delectus aut autem
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
