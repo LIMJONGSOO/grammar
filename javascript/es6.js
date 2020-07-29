@@ -730,24 +730,19 @@ console.log(myObj.changedValue);
 /*----------------------------------------------------------------------------------------*/
 
 /* 28. Promise */
-
-
 var promiseCount = 0;
 
 function testPromise() {
   var thisPromiseCount = ++promiseCount;
 
-  var log = document.getElementById('log');
-  log.insertAdjacentHTML('beforeend', thisPromiseCount +
-    ') 시작 (<small>동기적 코드 시작</small>)<br/>');
-
+  console.log(thisPromiseCount + ') 시작 (동기적 코드 시작)');
   // 새 프로미스 생성 - 프로미스의 생성 순서를 전달하겠다는 약속을 함 (3초 기다린 후)
   var p1 = new Promise(
     // 실행 함수는 프로미스를 이행(resolve)하거나
     // 거부(reject)할 수 있음
     function (resolve, reject) {
-      log.insertAdjacentHTML('beforeend', thisPromiseCount +
-        ') 프로미스 시작 (<small>비동기적 코드 시작</small>)<br/>');
+      console.log(thisPromiseCount + ') 프로미스 시작 (비동기적 코드 시작)');
+      
       // setTimeout은 비동기적 코드를 만드는 예제에 불과
       window.setTimeout(
         function () {
@@ -768,17 +763,15 @@ function testPromise() {
   p1.then(
     // 이행 값 기록
     function (val) {
-      log.insertAdjacentHTML('beforeend', val +
-        ') 프로미스 이행 (<small>비동기적 코드 종료</small>)<br/>');
+      console.log(thisPromiseCount + ') 프로미스 이행 (비동기적 코드 종료)');
     })
     .catch(
       // 거부 이유 기록
       function (reason) {
-        console.log('여기서 거부된 프로미스(' + reason + ')를 처리하세요.');
+        console.log(reason + ') 프로미스 거부 (비동기적 코드 종료)');
       });
 
-  log.insertAdjacentHTML('beforeend', thisPromiseCount +
-    ') 프로미스 생성 (<small>동기적 코드 종료</small>)<br/>');
+  console.log(thisPromiseCount + ') 프로미스 생성 (동기적 코드 종료)');
 }
 
 
